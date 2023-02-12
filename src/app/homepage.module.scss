@@ -1,0 +1,58 @@
+.homepage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .topHalf, .bottomHalf {
+    flex-grow: 1;
+  }
+  .topHalf {
+    min-height: 15em;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background: no-repeat 0 0 /35vw 100% URL('/PromoRobot.jpg'), repeat-x 35vw 0 /auto 100% URL('/PromoRobotBackground.jpg'), ;
+
+    &_content {
+      width: 33%;
+      min-width: 30em;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(4, 59, 92, 0.9);
+    }
+    &_logo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &_motto {
+      font-size: 0.86em;
+      color: #bebebe;
+    }
+    &_form {
+      width: 100%;
+      text-align: center;
+      input {
+        width: 18em;
+      }
+    }
+  }
+  .bottomHalf {
+    .tabPanel {
+      width: 33%;
+      min-width: 30em;
+    }
+  }
+  button, input, fieldset {
+    // dirty hack
+    // This isn't how it supposed to be
+    // since I'm styling MaterialUI component
+    // This should be done via Material UI configurator
+    color: white;
+    border-color: white;
+  }
+}
