@@ -1,0 +1,76 @@
+.dashboard {
+  height: 100%;
+  &_content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    > div {
+      padding: 1.5em 0 0.5em 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      &:first-child {
+        > div.dashboard_box {
+          position: relative;
+          z-index:3;
+          padding: 0 0 0 1.5em;
+          border-left: 0;
+          &:before {
+            writing-mode: tb-rl;
+            content: "Features:";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            color: #bebebe;
+            transform: translateY(-50%) rotate(180deg);
+          }
+          &:first-child:before {
+            content: "Bugs:"
+          }
+        }
+      }
+      > div:first-child {
+        border-bottom: 1px dashed #bebebe;
+      }
+      .dashboard_box {
+        display: flex;
+        height: 50%;
+        padding: 0.5em 0;
+        flex-grow: 1;
+        flex-direction:row;
+        flex-wrap: wrap;
+        gap: 0 0.5em;
+        justify-content: left;
+        align-items: flex-start;
+        align-content: flex-start;
+        border-left: 1px dashed #bebebe;
+        overflow-y: hidden;
+      }
+    }
+    &_todo, > &_inProgress, &_done {
+      position: relative;
+      &:before {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        color: #bebebe;
+      }
+    }
+    &_todo:before {
+      content: 'Todo:';
+    }
+    &_inProgress:before {
+      content: 'In Progress:';
+    }
+    &_done:before {
+      content: 'Done:';
+    }
+  }
+}

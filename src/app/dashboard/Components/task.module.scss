@@ -1,0 +1,32 @@
+.dashboard_task {
+  user-select: none;
+  cursor: move;
+  flex-grow: 0;
+  flex-basis: calc(25% - 1em);
+  height: calc(50% - 0.75em);
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+  margin: 0.5em 0.5em 0 0;
+  &_content {
+    flex-grow: 1;
+    word-break: break-all;
+    max-height: 100%;
+    background: #8e24aa;
+    overflow: auto;
+    text-overflow: ellipsis;
+    color: #FFFFFF;
+    font-size: 0.68em;
+  }
+  .taskHeaderBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #7b1fa2;
+    color: #FFFFFF;
+    margin: 0 -0.25em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
